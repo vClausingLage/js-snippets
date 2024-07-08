@@ -1,5 +1,5 @@
 import './style.css'
-import { arraToLocalizedString } from './arrayToLocalizedString.ts'
+import { arrayToLocalizedString } from './arrayToLocalizedString.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -9,5 +9,5 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
 `
 
-document.querySelector<HTMLDivElement>('#locStringEN')!.textContent = arraToLocalizedString(['Hello', 'World', 'Bar'], 'en')
-document.querySelector<HTMLDivElement>('#locStringDE')!.textContent = arraToLocalizedString(['Hello', 'World', 'Bar'], 'de')
+document.querySelector<HTMLDivElement>('#locStringEN')!.textContent = arrayToLocalizedString(['Hello', 'World', 'Bar'], 'en', 'and')
+document.querySelector<HTMLDivElement>('#locStringDE')!.textContent = arrayToLocalizedString(['Hello', 'World', 'Bar'], 'de', 'und')
