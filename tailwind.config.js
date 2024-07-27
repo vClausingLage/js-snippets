@@ -2,6 +2,7 @@
 export default {
   content: [
     'src/**/*.ts',
+    'pages/**/*.html'
   ],
   theme: {
     fontFamily: {

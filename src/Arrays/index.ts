@@ -1,3 +1,4 @@
+import '../style.css'
 import { calculateTotalAmount, groupObjectAndCount, arrayToObject, flattenArrayOfObjects, countOccurrences, mergeObjects, uniqueValues } from "./Reduce"
 
 document.getElementById('total')!.innerText = calculateTotalAmount()

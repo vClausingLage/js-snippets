@@ -4,17 +4,26 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold text-purple-600 text-center;
+    @apply text-3xl font-bold text-purple-600 text-center;
   }
   h2 {
-    @apply text-3xl font-bold text-purple-600 text-center;
+    @apply text-2xl font-bold text-purple-600 text-center;
   
   }
   h3 {
-    @apply text-2xl font-bold text-purple-600 text-center;
+    @apply text-xl font-bold text-purple-600 text-center;
+  }
+  p {
+    @apply text-lg text-gray-700;
   }
   a {
     @apply font-semibold text-blue-500 hover:underline;
+  }
+  .container {
+    @apply mx-auto px-4;
+  }
+  .text {
+    @apply text-lg text-gray-700 my-4;
   }
 }
 /* add custom fonts */
