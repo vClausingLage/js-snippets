@@ -19,7 +19,7 @@ export const groupObjectAndCount = () : string => {
     group[person.name] = group[person.name] || []
     group[person.name].push(person)
     return group
-  }, {})
+  }, {} as Group)
 
   return JSON.stringify(groupedByName)  
 }
@@ -31,7 +31,7 @@ export const arrayToObject = () : string => {
     { id: 3, name: 'Charlie' }
   ]
   
-  const userLookup = users.reduce((lookup, user) => {
+  const userLookup = users.reduce((lookup: any, user) => {
     lookup[user.id] = user
     return lookup
   }, {})
@@ -45,7 +45,7 @@ export const flattenArrayOfObjects = () : string => {
     { name: 'HR', employees: ['Charlie'] }
   ]
   
-  const allEmployees = departments.reduce((employees, department) => {
+  const allEmployees = departments.reduce((employees:any, department) => {
     return employees.concat(department.employees)
   }, [])
 
@@ -59,7 +59,7 @@ export const countOccurrences = () : string => {
     { type: 'apple', quantity: 3 }
   ]
   
-  const fruitCount = fruits.reduce((count, fruit) => {
+  const fruitCount = fruits.reduce((count: any, fruit) => {
     count[fruit.type] = (count[fruit.type] || 0) + fruit.quantity
     return count
   }, {})
@@ -78,7 +78,7 @@ export const mergeObjects = (): string => {
     { id: 3, value: 30 }
   ]
   
-  const merged = arr1.concat(arr2).reduce((acc, obj) => {
+  const merged = arr1.concat(arr2).reduce((acc: any, obj) => {
     acc[obj.id] = acc[obj.id] || { id: obj.id, value: 0 }
     acc[obj.id].value += obj.value
     return acc
@@ -94,7 +94,7 @@ export const uniqueValues = (): string => {
     { id: 3, category: 'fruit' }
   ];
   
-  const uniqueCategories = products.reduce((categories, product) => {
+  const uniqueCategories = products.reduce((categories: any, product) => {
     if (!categories.includes(product.category)) {
       categories.push(product.category);
     }
@@ -102,4 +102,14 @@ export const uniqueValues = (): string => {
   }, [])
   
   return JSON.stringify(uniqueCategories)
+}
+
+// TYPES
+// groupObjectAndCount
+type Person = {
+  name: string
+  age: number
+}
+type Group = {
+  [key: string]: Person[]
 }
