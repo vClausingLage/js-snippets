@@ -1,5 +1,5 @@
 import '../style.css'
-import { calculateTotalAmount, groupObjectAndCount, arrayToObject, flattenArrayOfObjects, countOccurrences, mergeObjects, uniqueValues } from "./Reduce"
+import { calculateTotalAmount, groupObjectAndCount, arrayToObject, flattenArrayOfObjects, countOccurrences, mergeObjects, uniqueValues } from "./reduce"
 
 document.getElementById('total')!.innerText = calculateTotalAmount()
 document.getElementById('group')!.innerText = groupObjectAndCount()

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Validation</h1>
+
+        <label for="test-mail">validate email</label>
+        <input type="text" id="test-mail"/>
+        <button id="validate">Validate</button>
+
+        <p>is valid: <span id="validator-result"></span></p>
+    </div>
+
+    <script type="module">
+        import { validateEmail } from '../src/validation/index.ts';
+
+        const btn = document.querySelector('#validate');
+        btn.addEventListener('click', () => {
+            const testMail = document.querySelector('#test-mail');
+            const result = validateEmail(testMail.value);
+            const validatorResult = document.querySelector('#validator-result');
+            validatorResult.textContent = result;
+        });
+    </script>
+  </body>
+</html>
